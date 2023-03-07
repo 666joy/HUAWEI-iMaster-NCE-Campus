@@ -1,0 +1,28 @@
+{
+    "data": {
+        "antenna2Dot4Gain": "1",
+        "antenna2th5Gain": null,
+        "antenna5Gain": "1",
+        "deviceId": "69a00649-24cc-4c9e-8aa3-4da976460f40",
+        "deviceName": "C1",
+        "flexibleRadio": 1,
+        "radio2BandwidthEnable": false,
+        "radio2dot4Bandwidth": "auto",
+        "radio2dot4Channel": "auto",
+        "radio2dot4Enabled": true,
+        "radio2dot4Power": "auto",
+        "radio2th5Bandwidth": null,
+        "radio2th5BandwidthEnable": null,
+        "radio2th5Channel": null,
+        "radio2th5Enabled": null,
+        "radio2th5Power": null,
+        "radio5Bandwidth": "auto",
+        "radio5BandwidthEnable": false,
+        "radio5Channel": "auto",
+        "radio5Channel2": null,
+        "radio5Enabled": true,
+        "radio5Power": "auto"
+    },
+    "errcode": "0",
+    "errmsg": ""
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/htmleaf-demo.css" rel="stylesheet">
+  <link href="./css/nav.css" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/team-introduce.css">
+  <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+  <script>
+      $(function () {
+          $.get("nav.html", function (data) {
+              $(".nav").html(data);
+          });
+      });
+  </script>
+  <title>系统介绍</title>
+</head>
+
+<body>
+<div id="placehold" style="width: 220px;height: 100%;float: left"></div>
+<section>
+  <div class="container" style="background-color: #ffffff;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="department-title main-font text-center"><h2>商场管理系统 <span class="title-clr"> 介绍</span></h2></div>
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <div class="feature-item mb-md-0 mb-5">
+          <span class="icon">
+            <i aria-hidden="true" class="fas fa-stethoscope"></i></span>
+          <div class="text feature-txt ">
+            <h4 class="feature-heading">项目背景</h4>
+            <p>随着近些年来我国人口的不断增长以及城市化率的提高，
+              我国的大型商场数目不断增加，
+              而且商场的人流量也日益增多。就目前的商业运营而言，
+              客流数量分析对于绝大多数的商场来说非常重要；
+              而且在人流量较大的商场，时常发生儿童、老人等
+              智力或认知能力较低的人员走失</p>
+          </div>
+        </div>
+        <div class="feature-item mb-md-0 mb-5" style="float: left">
+                <span class="icon-2">
+            <i aria-hidden="true" class="fas fa-tint"></i></span>
+          <div class="text feature-txt">
+            <h4 class="feature-heading">系统目标</h4>
+            <p>本系统可以从空间、时间两种不同维度对商场的人流量进行分析，并且能够对商场内的每个人进行精确的楼层定位，实现人流管理现代化、失踪寻人迅速化，为商场带来利润，为社会带来安全保障。</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-item mb-md-0 mb-5">
+                    <span class="icon-2">
+            <i aria-hidden="true" class="fas fa-briefcase-medical"></i></span>
+          <div class="text feature-txt">
+            <h4 class="feature-heading">设计理念</h4>
+            <p><b>现代化：</b>本项目的界面风格层简洁明快，时尚简约。界面设计以黑白为主色调，抛弃了繁琐的功能，以精简化、树状结构的设计方式来设计工能菜单，并且将其放置到界面左侧，鼠标移动到该处再弹出，这些能够最大化空间的简洁度和利用率。
+            </p>
+            <p><b>实用化：</b>项目突出实用性特征，有网络拓扑、流量统计、人流热力图等可视化的界面，让数据信息更加直观，能被更高效地利用。并且拥有设备管理、设备配置等功能，能够让每个设备的信息收取和管理更加智能化。
+            </p>
+          </div>
+        </div>
+        <div class="feature-item mb-md-0 mb-5">
+                <span class="icon">
+            <i aria-hidden="true" class="fas fa-microscope"></i></span>
+          <div class="text feature-txt">
+            <h4 class="feature-heading">系统功能</h4>
+            <p>1.环境管理：网络拓扑、流量统计</p>
+            <p>2.设备管理：设备信息查询、设备配置修改</p>
+            <p>3.商场人流：人流热力图、寻人定位</p>
+            <p>4.关于：系统介绍</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-4">
+          <div class="feature-item mb-md-0 mb-5 ">
+
+                        <span class="icon">
+  <i aria-hidden="true" class="fas fa-syringe"></i></span>
+
+              <div class="text feature-txt">
+                  <h4 class="feature-heading">Internal Medicine</h4>
+                  <p>Proin feugiat ex pharetra neque vestibulum consectetur. Donec non turpis et leo luctus.</p>
+              </div>
+
+          </div>
+          <div class="feature-item">
+
+      <span class="icon-2">
+  <i aria-hidden="true" class="fas fa-heart"></i></span>
+
+              <div class="text feature-txt">
+                  <h4 class="feature-heading">Cardio</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur elit. Curabitur at blandit duiut consequat ex.</p>
+              </div>
+
+          </div>
+
+      </div>
+  </div> -->
+    </div>
+  </div>
+</section>
+
+
+<div class="nav"></div>
+
+</body>
+
+</html>

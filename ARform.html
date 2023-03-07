@@ -1,0 +1,98 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.js"></script>
+</head>
+
+<body>
+<form class="layui-form" action="" id="APform" name="form">
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">ARID</label>
+    <div class="layui-input-block">
+      <input type="text" name="deviceId" placeholder="" autocomplete="off" class="layui-input" disabled>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">设备名称</label>
+    <div class="layui-input-block">
+      <input type="text" name="deviceName" placeholder="" autocomplete="off" class="layui-input" disabled>
+    </div>
+  </div>
+
+
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">掩码</label>
+    <div class="layui-input-block">
+      <input type="text" name="mask" placeholder="" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">描述</label>
+    <div class="layui-input-block">
+      <input type="text" name="description" placeholder="" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">下一跳地址</label>
+    <div class="layui-input-block">
+      <input type="text" name="nextAddress" placeholder="" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">目的IP地址</label>
+    <div class="layui-input-block">
+      <input type="text" name="destinationIp" placeholder="" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">优先级</label>
+    <div class="layui-input-block">
+      <input type="text" name="priority" placeholder="" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">路由出接口</label>
+    <div class="layui-input-block">
+      <input type="text" name="nextInterface" placeholder="" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">NQAID</label>
+    <div class="layui-input-block">
+      <input type="text" name="nqaId" placeholder="" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">DHCP开关</label>
+    <div class="layui-input-block">
+      <select name="nqaId" lay-verify="required">
+        <option value="true">开</option>
+        <option value="false">关</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">逻辑出接口</label>
+    <div class="layui-input-block">
+      <input type="text" name="nextLogicInterface" placeholder="" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">静态路由ID</label>
+    <div class="layui-input-block">
+      <input type="text" name="id" placeholder="" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+
+</form>
+</body>
+
+</html>

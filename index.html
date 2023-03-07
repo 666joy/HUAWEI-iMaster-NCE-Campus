@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/htmleaf-demo.css" rel="stylesheet">
+  <link href="./css/nav.css" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script>
+      $(function () {
+          $.get("nav.html", function (data) {
+              $(".nav").html(data);
+          });
+      })
+  </script>
+  <title>商场后台管理系统</title>
+</head>
+
+<body>
+<div id="placehold" style="width: 160px;height: 100%;float: left"></div>
+<div class="card">
+  <div id="font">
+    <strong>乾坤—商场网络管理系统</strong>
+  </div>
+  <div>
+    <h2>——经天纬地，万物互联</h2>
+  </div>
+  <img src="images/wifi.png" width="400px" height="280px">
+</div>
+<div class="nav"></div>
+</body>
+</html>

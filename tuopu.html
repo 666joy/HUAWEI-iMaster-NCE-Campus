@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/htmleaf-demo.css" rel="stylesheet">
+  <link href="./css/nav.css" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet">
+  <link href="./bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+  <script>
+      $(function () {
+          $.get("nav.html", function (data) {
+              $(".nav").html(data);
+          });
+      })
+      $("#orderBtnGroup .btn:first").click().addClass("active");
+      $("#orderBtnGroup").children().removeClass("active");
+  </script>
+  <script type="text/javascript" src="js/tip.js"></script>
+  <script>
+      function changePic(path) {
+          document.getElementById("showme").src = "images/" + path + ".png";
+          document.getElementById("la").innerHTML = "商城" + path + "层";
+      }
+  </script>
+  <title>网络拓扑</title>
+</head>
+
+<body>
+<div id="placehold" style="width: 180px;height: 100%; float: left"></div>
+<div class="card">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <!-- Split button -->
+        <form method="post">
+          <div class="form-inline center-block" style="display: inline-block; text-align: center">
+            <label style="margin: 15px 10px 20px 10px;font-size: 20px; text-align: center">网络拓扑图</label>
+            <select id="selectLeo2" class="form-control form-control-placeholder"
+                    style="margin-top: 0px; margin-left: 20px" onchange="changePic(this.value)">
+              <option value="-1" disabled selected hidden>请选择楼层</option>
+              <option value="1" style="color: black;">商城一层</option>
+              <option value="2" style="color: black;">商城二层</option>
+              <option value="3" style="color: black;">商城三层</option>
+            </select>
+            <input class="btn" type="file" style="display: inline-block; text-align: center">
+            <div class="center-block form-inline" style="display: inline-block;">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="拓扑图命名...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">上传</button>
+                </span>
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <table style="margin-left: 200px">
+    <tr>
+      <td>
+        <img id="showme" src="images/1.png" style="width: 700px; height: 400px"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label id="la">商城1层</label>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="nav"></div>
+</body>
+
+</html>

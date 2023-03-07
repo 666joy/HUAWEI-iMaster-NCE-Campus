@@ -1,0 +1,243 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.js"></script>
+</head>
+
+<body>
+<form class="layui-form" action="" id="APform">
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">APID</label>
+    <div class="layui-input-block">
+      <input type="text" name="deviceId" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input" disabled>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">AP名称</label>
+    <div class="layui-input-block">
+      <input type="text" name="deviceName" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input" disabled>
+    </div>
+  </div>
+
+
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">VLAN</label>
+    <div class="layui-input-block">
+      <input type="text" name="vlanId" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">IP</label>
+    <div class="layui-input-block">
+      <input type="text" name="ip" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">掩码</label>
+    <div class="layui-input-block">
+      <input type="text" name="mask" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">网关地址</label>
+    <div class="layui-input-block">
+      <input type="text" name="gateway" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">主DNS</label>
+    <div class="layui-input-block">
+      <input type="text" name="masterDns" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">备DNS</label>
+    <div class="layui-input-block">
+      <input type="text" name="slaveDns" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input">
+    </div>
+  </div>
+
+
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">2.4G射频状态</label>
+    <div class="layui-input-block">
+      <select name="radio2dot4Enabled" lay-verify="required">
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">2.4G射频功率</label>
+    <div class="layui-input-block">
+      <input type="text" name="radio2dot4Power" required lay-verify="required" placeholder=""
+             autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">2.4G射频信道</label>
+    <div class="layui-input-block">
+      <input type="text" name="radio2dot4Channel" required lay-verify="required" placeholder=""
+             autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">2.4G调优频宽</label>
+    <div class="layui-input-block">
+      <select name="radio2dot4Bandwidth" lay-verify="required">
+        <option value="auto">auto</option>
+        <option value="20mhz">20mhz</option>
+        <option value="40mhz-plus">40mhz-plus</option>
+        <option value="40mhz-minus">40mhz-minus</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">2.4G射频增益</label>
+    <div class="layui-input-block">
+      <input type="text" name="antenna2Dot4Gain" required lay-verify="required" placeholder=""
+             autocomplete="off" class="layui-input" disabled>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">带宽使能</label>
+    <div class="layui-input-block">
+      <select name="radio2BandwidthEnable" lay-verify="required">
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频状态</label>
+    <div class="layui-input-block">
+      <select name="radio5Enabled" lay-verify="required">
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频功率</label>
+    <div class="layui-input-block">
+      <input type="text" name="radio5Power" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频信道</label>
+    <div class="layui-input-block">
+      <input type="text" name="radio5Channel" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频信道二</label>
+    <div class="layui-input-block">
+      <input type="text" name="radio5Channel2" required lay-verify="required" placeholder=""
+             autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频增益</label>
+    <div class="layui-input-block">
+      <input type="text" name="antenna5Gain" required lay-verify="required" placeholder="" autocomplete="off"
+             class="layui-input" disabled>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频频宽</label>
+    <div class="layui-input-block">
+      <select name="radio5Bandwidth" lay-verify="required">
+        <option value="auto">auto</option>
+        <option value="20mhz">20mhz</option>
+        <option value="40mhz-plus">40mhz-plus</option>
+        <option value="40mhz-minus">40mhz-minus</option>
+        <option value="80mhz">80mhz</option>
+        <option value="80plus80mhz">80plus80mhz</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G带宽使能</label>
+    <div class="layui-input-block">
+      <select name="radio5BandwidthEnable" lay-verify="required">
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频使能二</label>
+    <div class="layui-input-block">
+      <select name="radio2th5Enabled" lay-verify="required">
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频功率二</label>
+    <div class="layui-input-block">
+      <input type="text" name="radio2th5Power" required lay-verify="required" placeholder=""
+             autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频信道二</label>
+    <div class="layui-input-block">
+      <input type="text" name="radio2th5Channel" required lay-verify="required" placeholder=""
+             autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频增益二</label>
+    <div class="layui-input-block">
+      <input type="text" name="antenna2th5Gain" required lay-verify="required" placeholder=""
+             autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G射频频宽二</label>
+    <div class="layui-input-block">
+      <input type="text" name="radio2th5Bandwidth" required lay-verify="required" placeholder=""
+             autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">5G带宽使能二</label>
+    <div class="layui-input-block">
+      <select name="radio2th5BandwidthEnable" lay-verify="required">
+        <option value="true">true</option>
+        <option value="false">false</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">DCA开关</label>
+    <div class="layui-input-block">
+      <select name="flexibleRadio" lay-verify="required">
+        <option value="1">开</option>
+        <option value="0">关</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+</body>
+
+</html>

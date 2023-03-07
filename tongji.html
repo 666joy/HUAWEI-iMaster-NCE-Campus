@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/htmleaf-demo.css" rel="stylesheet">
+  <link href="./css/nav.css" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet">
+  <link href="./bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+  <script src="./js/echarts.min.js"></script>
+  <script>
+      $(function () {
+          $.get("nav.html", function (data) {
+              $(".nav").html(data);
+          });
+      });
+
+      function main1() {
+          var chartDom = document.getElementById('main1');
+          var myChart = echarts.init(chartDom);
+          // 获取当前的option
+          randomList = [
+              [12032, 12210, 13270, 11034, 13601, 12570, 15678],
+              [12457, 13235, 18570, 13422, 18333, 14543, 14526],
+              [12267, 12789, 13246, 13560, 18790, 12401, 16787],
+          ];
+          var random = $("#input-device option:selected").val();
+          console.log(random)
+          var option;
+          option = {
+              title: {
+                  text: '本周访客流量变化'
+              },
+              xAxis: {
+                  type: 'category',
+                  data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+              },
+              yAxis: {
+                  type: 'value'
+              },
+              series: [
+                  {
+                      data: randomList[random],
+                      type: 'line',
+                      itemStyle: {
+                          normal: {
+                              label: {
+                                  show: true, //开启显示
+                                  position: 'top', //在上方显示
+                                  textStyle: { //数值样式
+                                      color: 'black',
+                                      fontSize: 16
+                                  }
+                              }
+                          }
+                      }
+                  }
+              ]
+          };
+          option && myChart.setOption(option);
+      };
+
+      function main2() {
+          var chartDom = document.getElementById('main2');
+          var myChart = echarts.init(chartDom);
+          randomList = [
+              [109897, 125601, 117024, 118960],
+              [90401, 135605, 127003, 138047],
+              [110198, 127609, 97022, 108301]
+          ];
+          var random = $("#input-device option:selected").val();
+          var option;
+          option = {
+              title: {
+                  text: '本月访客流量变化'
+              },
+              xAxis: {
+                  type: 'category',
+                  data: ['week1', 'week2', 'week3', 'week4']
+              },
+              yAxis: {
+                  type: 'value'
+              },
+              series: [
+                  {
+                      data: randomList[random],
+                      type: 'line',
+                      itemStyle: {
+                          normal: {
+                              label: {
+                                  show: true, //开启显示
+                                  position: 'top', //在上方显示
+                                  textStyle: { //数值样式
+                                      color: 'black',
+                                      fontSize: 16
+                                  }
+                              }
+                          }
+                      }
+                  }
+              ],
+          };
+          option && myChart.setOption(option);
+      };
+      $(document).ready(function () {
+          main1();
+          main2()
+      });
+
+      function main() {
+          main1();
+          main2();
+      }
+  </script>
+  <title>流量统计</title>
+
+</head>
+
+<body>
+<div id="placehold" style="width: 180px;height: 100%;float: left"></div>
+<div class="card">
+  <div style="width: 100%;height:50%;float: left;margin-top: 10px;margin-bottom:0px;color: black">
+    <form class="form-inline" style="padding-left: 25px;">
+      <div class="form-group">
+        <h5 class="form-control-static">站 点: </h5>
+      </div>
+      <div class="form-group">
+        <select id="input-device" class="form-control">
+          <option value=0>Site1</option>
+          <option value=1>Site2</option>
+          <option value=2>Site3</option>
+        </select>
+      </div>
+      <input id="btn-jiece" type="button" style="margin-left: 10px;outline: none"
+             class="btn btn-default" onclick="main() " value="监测">
+      <input id="btn-reset" type="button" style="margin-left: 5px;outline: none" class="btn btn-default"
+             onclick="location.reload();" value="重置">
+    </form>
+    <div>
+      <div class="form-inline" style="display: inline-block;float: left;margin-left: 20px;float:left">
+        <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+        <div id="main1" style="width: 500px;height:240px;float: left"></div>
+        <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+        <div id="main2" style="width: 500px;height:240px; float: left"></div>
+      </div>
+      <div class="form-inline" style="width: 40%;display: inline-block; margin: auto;">
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">站点流量统计排行</div>
+          <!-- Table -->
+          <table class="table">
+            <tr>
+              <th style="text-align: center">#</th>
+              <th style="text-align: center">站点区域</th>
+              <th style="text-align: center">实时访客数</th>
+              <th style="text-align: center">历史访客数</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Site1</td>
+              <td id="shishi1"></td>
+              <td>1756715</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Site2</td>
+              <td id="shishi2"></td>
+              <td>1816915</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Site3</td>
+              <td id="shishi3"></td>
+              <td>1616813</td>
+            </tr>
+          </table>
+        </div>
+        <script type="text/javascript">
+            var randomList = [
+                ["356", "443", "287"],
+                ["448", "367", "556"],
+                ["572", "254", "443"],
+                ["269", "342", "335"],
+                ["374", "272", "258"]
+            ]
+            var random = Math.ceil(Math.random() * 4)
+            var shishi = randomList[random]
+            var place1 = document.getElementById('shishi1');
+            var place2 = document.getElementById('shishi2');
+            var place3 = document.getElementById('shishi3');
+            place1.innerText = shishi[0]
+            place2.innerText = shishi[1]
+            place3.innerText = shishi[2]
+        </script>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">首页</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">上一页</button>
+          <button type="button" class="btn btn-info active">1</button>
+          <button type="button" class="btn btn-default">下一页</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">尾页</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav"></div>
+</body>
+</html>

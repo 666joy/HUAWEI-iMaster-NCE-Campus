@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/htmleaf-demo.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./layui/layui.js"></script>
+    <script type="text/javascript" src="./js/zengshan.js"></script>
+    <script type="text/javascript" src="./js/jquery.form.js"></script>
+    <title>设备添加</title>
+
+</head>
+
+<body style="width: 100%;">
+    <div id="placehold" style="width: 220px; height: 100%; float: left;"></div>
+
+    <div id="zengshan" style="width: calc(100% - 220px); height: 100%; float: left;">
+
+        <!-- <div id="xialacaidan" style="height: 60px; width: auto;">
+            <button class="layui-btn" id="devicetype" style="margin-top: 22px; margin-left:40px; float: left;">
+                设备类型
+                <i class="layui-icon layui-icon-down layui-font-12"></i>
+            </button>
+        </div> -->
+
+        <div id="peizhikuang"
+            style="margin: 40px; border: 1px solid white; border-radius: 16px; padding: 50px; background-color: whitesmoke;">
+            <form class="layui-form" action="http://127.0.0.1:5000/chuangjianshebei" id="form" method="post">
+                <div class="layui-form-item">
+                    <label class="layui-form-label"
+                        style="font-size: 1px; line-height: 36px; padding: 0;">设备ESN号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="esn" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">设备名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="name" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">站点ID</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="siteId" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"
+                        style="font-size: 1px; line-height: 36px; padding: 0;">设备详情描述</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="description" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">设备款型</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="deviceModel" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"
+                        style="font-size: 1px; line-height: 36px; padding: 0;">系统IP地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="systemIp" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"
+                        style="font-size: 1px; line-height: 36px; padding: 0;">设备标签列表</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="tags" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"
+                        style="font-size: 1px; line-height: 36px; padding: 0;">开局使能开关</label>
+                    <div class="layui-input-block">
+                        <select name="ztpConfirm">
+                            <option value="false">关</option>
+                            <option value="true">开</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"
+                        style="font-size: 1px; line-height: 36px; padding: 0;">设备角色枚举</label>
+                    <div class="layui-input-block">
+                        <select name="role" required>
+                            <option value="Gateway">Gateway</option>
+                            <option value="CORE">CORE</option>
+                            <option value="Firewall">Firewall</option>
+                            <option value="WAC">WAC</option>
+                            <option value="AGG">AGG</option>
+                            <option value="ACC">ACC</option>
+                            <option value="AP">AP</option>
+                            <option value="Interworking Gateway">Interworking Gateway</option>
+                            <option value="RR">RR</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">转发性能值</label>
+                    <div class="layui-input-block">
+                        <select name="performance">
+                            <option value="0">0</option>
+                            <option value="1000">1000</option>
+                            <option value="5000">5000</option>
+                            <option value="10000">10000</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"
+                        style="font-size: 1px; line-height: 36px; padding: 0;">同步注册中心</label>
+                    <div class="layui-input-block">
+                        <select name="isRegisterEnable">
+                            <option value="false">否</option>
+                            <option value="true">是</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn">立即提交</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="nav" style="height: 820px;"></div>
+
+</body>
+
+</html>

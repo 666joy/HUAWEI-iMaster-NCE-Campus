@@ -1,0 +1,22 @@
+div.card {
+    background-color: white;
+    width: 82%;
+    height: 95%;
+    margin: 10px;
+    margin-left: 15px;
+    float: left;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    float: left;
+    text-align: center;
+}
+
+#font {
+    margin-top: 70px;
+    font-size: 80px;
+    filter: dropshadow(color=#228B22, offX=5, offY=3, Positive=1);
+    width: 100%;
+    color: dodgerblue;
+    line-height: 150%;
+    font-family: "Arial", Tahoma, "微软雅黑", Georgia, Consolas, "华文行楷";
+}

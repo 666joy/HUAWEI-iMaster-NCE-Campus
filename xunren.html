@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/htmleaf-demo.css" rel="stylesheet">
+    <link href="./css/nav.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/relitu.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.1.0.js"></script>
+    <script src="./json/loucengshebei.json?callback=callback"></script>
+    <link href="./bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        $(function () {
+            $.get("nav.html", function (data) {
+                $(".nav").html(data);
+            });
+            $('ul button').click(function () {
+                //切换标签样式
+                $(this).addClass('active').siblings().removeClass('active');
+                //切换div显示隐藏
+                $('#wrap>div').eq($(this).index()).show().siblings().hide();
+                
+                $( this ).addClass( 'active' ).siblings().removeClass( 'active' );
+                //也可以直接写成一句话，和上面两句分着写效果是一样的
+                // $(this).addClass('active').siblings().removeClass('active').parent().next().children().eq($(this).index()).show().siblings().hide();
+            });
+            // $("#chaxun").click(function () {
+            //     $.post("http://127.0.0.1:5000/login", function (data, status) {
+            //         alert("Data: " + data + "nStatus: " + status);
+            //     });
+            // });
+            
+        })
+        function callback(data){
+            console.log(data);
+        }
+    </script>
+    <script>
+        window.onload = function () {
+            var url = "json/loucengshebei.json";
+            var request = new XMLHttpRequest();
+            request.open("get", url);
+            request.send(null);
+            request.onload = function () {
+                if (request.status == 200) {
+                    var txt=request.responseText;//json原格式
+                    // console.log(txt);
+                    var json = JSON.parse(txt);//json数组
+                    // console.log(json);
+                    var data=JSON.stringify(json);//字符串数组
+                    // console.log(data);
+                    data2=JSON.parse(data);//元组
+                    console.log(data2);
+                    
+                    // console.log(data2[0]);
+                    // 下拉列表
+                    for (let j = 0; j < data2.length; j++) {
+                        let svp = data2[j];
+                        let html1 = `<option value="${svp.id}" style="color: black;">${svp.id}</option>`
+                        $("#selectLeo1").append(html1);
+                    }
+                }
+            }
+        }
+        function dingwei(){
+            var myselect=document.getElementById("selectLeo1");//获取select对象
+            var index = myselect.selectedIndex;// selectedIndex是所选中的项的index
+            // var a=myselect.options[index].value;//获取选中项的value
+            run(index-1);
+        }
+        function run(index){
+            //index为选中人的下标
+            var url = "json/loucengshebei.json";
+            var request = new XMLHttpRequest();
+            request.open("get", url);
+            request.send(null);
+            request.onload = function () {
+                if (request.status == 200) {
+                    var txt=request.responseText;//json原格式
+                    var json = JSON.parse(txt);//json数组
+                    var data=JSON.stringify(json);//字符串数组
+                    data2=JSON.parse(data);//元组
+                    console.log(data2[index]);
+                    var yuanzu=data2[index];
+                    console.log(yuanzu.floorNumber);
+                    var label1='bt'+yuanzu.floorNumber;
+                    document.getElementById(label1).click();
+                    var dingweiX=yuanzu.positionX*8-400;
+                    var dingweiY=yuanzu.positionY*4.5-20;
+                    console.log(dingweiX);
+                    console.log(dingweiY);
+
+                    // 判断是否为空
+                    if(document.getElementById("imgTest")) { //存在
+                        document.getElementById("imgTest").remove();
+                    }
+
+                    var label2='#div'+yuanzu.floorNumber;
+                    let html2=`<img id="imgTest" src="images/dw1.gif" style="position:relative;left:${dingweiX}px;top:${dingweiY}px;width:40px;height:40px;">`;
+                    $(label2).append(html2);
+                }
+            }
+        }
+    </script>
+    <title>寻人定位</title>
+
+</head>
+
+<body>
+    <div id="placehold" style="width: 180px;height: 100%; float: left"></div>
+    <div class="card">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- Split button -->
+            <form method="post">
+            <div class="form-inline" style="width:900px;margin-left: 0px;padding: 0px;display: inline-block;">
+                <label style="margin: 15px 10px 20px 10px;font-size: 20px;">寻人定位图</label>
+                <select id="selectLeo1" class="form-control form-control-placeholder" style="margin-top: 0px;">
+                <option id="opt" value="-1" disabled selected hidden>请选择终端编号</option>
+                </select>
+                
+                <button type="button" class="btn btn-primary" style="margin-left: 20px" id="chaxun"
+                        onclick="dingwei()">查询
+                </button>
+
+            </div>
+            </form>
+        </div>
+        </div>
+    </nav>
+    <table>
+        <tr>
+        <td style="width:20%;">
+            <div>
+                <ul id="tabTitle"  style="width:10%;height:400px;">
+                    <button type="button" class="btn btn-primary active" id="bt1">商城一层</button>
+                    <button type="button" class="btn btn-primary" id="bt2">商城二层</button>
+                    <button type="button" class="btn btn-primary" id="bt3">商城三层</button>
+                </ul>
+            </div>
+        </td>
+        <td>
+            <div id="wrap" style="width: 600px; height: 400px">
+                <div id="div1" style="display: block;width: 700px; height: 400px;
+                background: url(images/f1.jpg);background-size: 700px 400px;border: 0px">
+                    <!-- <img src="images/dw1.gif" style="position:relative;left:-400px;top:-20px;width:40px;height:40px;"> -->
+                </div>
+                <div id="div2" style="width: 700px; height: 400px;
+                display:none;background: url(images/f2.jpg);background-size: 700px 400px;border: 0px">
+                    <!-- <img src="images/f2.jpg" style="width: 795px; height: 445px"> -->
+                </div>
+                <div id="div3" style="width: 700px; height: 400px;
+                display:none;background: url(images/f3.jpg);background-size: 700px 400px;border: 0px">
+                    <!-- <img src="images/f3.jpg" style="width: 795px; height: 445px"> -->
+                </div>
+            </div>
+            <!-- <img src="images/floor.png" style="width: 600px; height: 400px"/> -->
+        </td>
+        </tr>
+    </table>
+    
+    </div>
+    <!-- 左侧导航栏 -->
+    <div class="nav"></div>
+
+</body>
+
+</html>

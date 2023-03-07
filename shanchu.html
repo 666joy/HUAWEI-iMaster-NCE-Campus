@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/htmleaf-demo.css" rel="stylesheet">
+  <link href="./css/nav.css" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet">
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="./layui/layui.js"></script>
+  <script type="text/javascript" src="./js/shanchu.js"></script>
+  <script type="text/javascript" src="./js/jquery.form.js"></script>
+  <title>设备删除</title>
+
+</head>
+
+<body style="width: 100%;">
+<div id="placehold" style="width: 220px; height: 100%; float: left;"></div>
+
+<div id="zengshan" style="width: calc(100% - 220px); height: 100%; float: left;">
+
+  <div id="peizhikuang"
+       style="margin: 40px; border: 1px solid white; border-radius: 16px; padding: 50px; background-color: whitesmoke;">
+    <form class="layui-form" action="http://127.0.0.1:5000/shanchushebei" id="form" method="post">
+      <div class="layui-form-item">
+        <label class="layui-form-label" style="font-size: 1px; line-height: 36px; padding: 0;">设备ID号</label>
+        <div class="layui-input-block">
+          <input type="text" name="id" placeholder="" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn" style="background-color: #FE5F55;">立即删除</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+<div class="nav"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/jquery.form.js"></script>
+    <script src="./js/login.js"></script>
+    <script type="text/javascript" src="./layui/layui.js"></script>
+    <link href="./css/login.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dowebok" id="dowebok">
+        <div class="form-container sign-up-container">
+            <form id="form1" action="http://127.0.0.1:5000/register" method="post">
+                <h1>注册</h1>
+                <span>请输入您的信息</span>
+                <input type="text" id="username" name="username" placeholder="账号"
+                    onblur="validate_username(this.value)">
+                <span id="test_user" style="height: 15px;"></span>
+                <input type="password" id="password" name="password" placeholder="密码"
+                    onblur="validate_password(this.value)">
+                <span id="is_test_pw1" style="height: 15px;"></span>
+                <input type="password" id="password2" name="password2" onblur="validate_password2(this.value)"
+                    placeholder="确认密码">
+                <span id="is_test_pw2" style="height: 30px;"></span>
+                <button id="register">注册</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form id="form2" action="http://127.0.0.1:5000/login" method="post">
+                <h1>登录</h1>
+                <span>或使用您的帐号</span>
+                <input type="text" placeholder="账号" id="acc" name="acc">
+                <input type="password" placeholder="密码" id="pw" name="pw">
+                <button id="login">登录</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>已有帐号？</h1>
+                    <p>请使用您的帐号进行登录</p>
+                    <button class="ghost" id="signIn">登录</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>没有帐号？</h1>
+                    <p>立即注册使用系统</p>
+                    <button class="ghost" id="signUp">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap div {
+    width: 150px;
+    height: 140px;
+    border: 1px solid black;
+    clear: both;
+    margin-left: 10px;
+    display: none;
+}
+
+.active {
+    background: palegreen;
+}
+
+ul button{
+    margin:70px 40px 70px 40px;
+    margin-left:70px;
+}
+
+#wrap{
+    display: block;
+    width: 40%; 
+    height: 400px;
+}
+
+.disabledd{
+    display:none;
+}
